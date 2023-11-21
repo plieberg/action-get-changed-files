@@ -79,3 +79,4 @@ function handleError(err: any): void {
   console.error(err)
   core.setFailed(`Unhandled error: ${err}`)
 }
+
