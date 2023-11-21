@@ -48,6 +48,13 @@ async function run(): Promise<void> {
           before: context.payload.pull_request!.base.sha
         }
         break
+      case 'issue_comment':
+        innerContext = {
+          repo: context.repo,
+          after: context.payload.pull_request!.head.sha,
+          before: context.payload.pull_request!.base.sha
+        }
+        break
       default:
         throw new Error('Event type not supported')
     }
